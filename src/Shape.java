@@ -21,18 +21,25 @@ public class Shape {
     }
 
     public static void main(String[] args) {
-       Circle circle = new Circle(3.14, 2);
-       circle.calculateArea();
-       circle.display();
+        try {
+            Circle circle = new Circle(3.14, 2);
+            circle.calculateArea();
+            circle.display();
 
-       Rectangle rectangle = new Rectangle(12, 6);
-       rectangle.calculateArea();
-       rectangle.display();
+            Rectangle rectangle = new Rectangle(12, 6);
+            rectangle.calculateArea();
+            rectangle.display();
 
-       Triangle triangle = new Triangle(7, 3);
-       triangle.calculateArea();
-       triangle.display();
+            Triangle triangle = new Triangle(7, 3);
+            triangle.calculateArea();
+            triangle.display();
 
+            Circle invalidCircle = new Circle(3.14, -5);
+            invalidCircle.calculateArea();
+            invalidCircle.display();
 
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }

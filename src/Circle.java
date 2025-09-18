@@ -4,8 +4,16 @@ class Circle extends Shape {
     double radius;
     double pi = Math.PI;
 
-public Circle(double pi,double radius){
+public Circle(double pi,double radius) throws Exception{
     super();
+
+    if (radius < 0) {
+        throw new Exception("Radius cannot be negative");
+    }
+    if (radius > Math.PI) {
+        throw new Exception("Radius cannot be greater than phi");
+    }
+
     this.radius=radius;
     this.pi=pi;
 }
